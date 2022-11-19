@@ -6,6 +6,7 @@
 
 .dialogsItems {
     padding: 10px;
+    color: aliceblue;
 
 }
 
@@ -14,13 +15,14 @@
 }
 
 .dialog {
-
+color: aliceblue;
 }
+
 .messages {
     padding: 10px;
 
 }
 
-.message {
-
+.messages .message {
+color: aliceblue;
 }
