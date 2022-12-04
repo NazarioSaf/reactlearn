@@ -7,9 +7,14 @@
 
 .item a {
   color: white;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 .item a.active {
   color: rgb(127, 127, 127);
+}
+
+.friends {
+  margin-top: 20px;
+  font-size: 20px;
 }
