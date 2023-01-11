@@ -10,7 +10,7 @@ import News from './components/News/News';
 import Music from './Music/Music';
 import Settings from './Settings/Settings';
 import Friends from './components/Friends/Friends';
-import { updateNewPostText } from './Redux/State';
+
 
 
 const App = (props) => {
