@@ -10,6 +10,7 @@ import News from './components/News/News';
 import Music from './Music/Music';
 import Settings from './Settings/Settings';
 import Friends from './components/Friends/Friends';
+import { updateNewPostText } from './Redux/State';
 
 
 const App = (props) => {
@@ -21,8 +22,16 @@ const App = (props) => {
         <Navbar state={props.state.sideBar} />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogPage}/>} />
-            <Route exact path='/profile' element={<Profile state={props.state.profilePage}/>} />
+            <Route path='/dialogs/*' element={<Dialogs 
+           dialogPage={props.state.dialogPage}
+           addMessage={props.addMessage}
+           updateNewMessageText={props.updateNewMessageText} 
+            />} />
+            <Route exact path='/profile' element={<Profile 
+            profilePage={props.state.profilePage} 
+            addPost={props.addPost}
+            updateNewPostText={props.updateNewPostText}
+            />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />
