@@ -42,23 +42,22 @@ let store = {
         console.log('');
     },
 
-    addPost() {
-        let newPost = {
-            id: 3,
-            message: this._state.profilePage.newPostText,
-            like: 0
-        };
-        this._state.profilePage.post.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this.rerenderEntireTree(this._state);
-    },
 
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this.rerenderEntireTree(this._state);
-    },
 
-    addMessage() {
+dispatch(action){
+    if (action.type === 'ADD-POST'){
+    let newPost = {
+        id: 3,
+        message: this._state.profilePage.newPostText,
+        like: 0
+    };
+    this._state.profilePage.post.push(newPost);
+    this._state.profilePage.newPostText = '';
+    this.rerenderEntireTree(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+        this._state.profilePage.newPostText = action.newText;
+        this.rerenderEntireTree(this._state);
+    } else if (action.type === 'ADD-MESSAGE'){
         let newMessage = {
             id : 6,
             message: this._state.dialogPage.newMessageText
@@ -66,12 +65,16 @@ let store = {
         this._state.dialogPage.message.push(newMessage);
         this._state.dialogPage.newMessageText = '';
         this.rerenderEntireTree(this._state);
-    },
-
-    updateNewMessageText(newMessage){
-        this._state.dialogPage.newMessageText= newMessage;
+    } else if (action.type ===  'UPDATE-NEW-MESSAGE-TEXT'){
+        this._state.dialogPage.newMessageText= action.newMessage;
         this.rerenderEntireTree(this._state);
-    },
+    }
+},
+
+
+
+
+
 
     subscribe(observer) {
         this.rerenderEntireTree = observer;
