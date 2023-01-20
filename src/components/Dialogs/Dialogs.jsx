@@ -1,6 +1,7 @@
 import { type } from "@testing-library/user-event/dist/type";
 import React from "react"
 import { NavLink } from "react-router-dom";
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from "../../Redux/State";
 import DialogsItem from "./DialogItem/DialogsItem";
 import s from './Dialogs.module.css'
 import MessageM from "./Message/Message";
@@ -15,13 +16,15 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.dispatch({type: 'ADD-MESSAGE'});
+        props.dispatch(addMessageActionCreator());
     };
 
     let onMessageChange = () => {
         let text = newMessageElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newMessage: text});
+        let action = updateNewMessageTextActionCreator(text);
+        props.dispatch(action);
     };
+    
     return (
         <div className={s.dialogs}>
             <div>
@@ -37,7 +40,7 @@ const Dialogs = (props) => {
                     <textarea onChange={onMessageChange} ref={newMessageElement} value={props.newMessageText}></textarea>
                 </div>
                 <div>
-                    <button onClick={ addMessage }>New message</button>
+                    <button onClick={addMessage}>New message</button>
                 </div>
 
             </div>
