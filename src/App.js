@@ -14,13 +14,14 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 
+
 const App = (props) => {
 
   return (
-    <BrowserRouter>
+
       <div className='app-wrapper'>
         <Header />
-        <Navbar state={props.state.sideBar} />
+        <Navbar store={props.store} />
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/dialogs/*' element={<DialogsContainer store={props.store} />} />
@@ -28,11 +29,12 @@ const App = (props) => {
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />
-            <Route path='/friends' element={<Friends state={props.state.sideBar}/>} />
+            {/* <Route path='/friends' element={<Friends store={props.store}/>} /> */}
           </Routes>
         </div>
       </div>
-    </BrowserRouter>);
+ 
+    );
 }
  
 

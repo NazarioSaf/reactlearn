@@ -4,7 +4,7 @@ import FriendsBar from '../Friends/FriendBar/FriendsBar';
 import s from './Navbar.module.css';
 
 const Navbar = (props) => {
-  let friendElements = props.state.name.map(f => <FriendsBar name={f.name} />)
+  // let friendElements = state.name.map(f => <FriendsBar name={f.name} />)
 
   return (
     <nav className={s.nav}>
@@ -24,10 +24,11 @@ const Navbar = (props) => {
         <NavLink to='/settings' className={navData => navData.isActive ? s.active : s.item}>Settings</NavLink>
       </div>
 
-      <div className={`${s.item} ${s.friends}`}>
+      {/* <div className={`${s.item} ${s.friends}`}>
         <NavLink to='/friends' className={navData => navData.isActive ? s.active : s.item}>Friends</NavLink>
              </div>
-             <div>{(friendElements)}</div> 
+             <div>{(friendElements)}</div>  */}
+
          </nav>);
 }
 

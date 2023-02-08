@@ -3,8 +3,9 @@ import s from './News.module.css';
 
 const News = () => {
   return (
-  <div>
-News
+  <div className={s.News}>
+<h1>NEWS</h1>
+
        </div>
       );
 }

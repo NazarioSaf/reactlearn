@@ -1,15 +1,15 @@
-import React from 'react';
-import FriendsBar from './FriendBar/FriendsBar';
-import s from './Friends.module.css';
+// import React from 'react';
+// import FriendsBar from './FriendBar/FriendsBar';
+// import s from './Friends.module.css';
 
-const Friends = (props) => {
-  let friendElements = props.state.name.map(f => <FriendsBar name={f.name} />)
+// const Friends = (state) => {
+//   let friendElements = state.name.map(f => <FriendsBar name={f.name} />)
 
-  return (
-<div>
-{(friendElements)}
-</div>
-    );
-};
+//   return (
+// <div>
+// {(friendElements)}
+// </div>
+//     );
+// };
 
-export default Friends;
+// export default Friends;
