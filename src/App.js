@@ -11,6 +11,7 @@ import Settings from './Settings/Settings';
 import Friends from './components/Friends/Friends';
 
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 
@@ -26,6 +27,7 @@ const App = (props) => {
           <Routes>
             <Route path='/dialogs/*' element={<DialogsContainer store={props.store} />} />
             <Route exact path='/profile' element={<Profile store={props.store} />} />
+            <Route path='/users' element={<UsersContainer />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />

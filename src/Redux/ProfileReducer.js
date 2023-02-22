@@ -18,19 +18,19 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newPostText: '',
-                post: [...state.post, { id: 3, message: newPost, like: 0 } ]
+                post: [...state.post, { id: 3, message: newPost, like: 0 }]
             };
         }
 
-        case UPDATE_NEW_POST_TEXT:{
+        case UPDATE_NEW_POST_TEXT: {
             return {
                 ...state,
-                newPostText:action.newText
+                newPostText: action.newText
             }
         }
-            default:
+        default:
             return state;
-        
+
     }
 };
 

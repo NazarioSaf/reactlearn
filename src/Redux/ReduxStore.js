@@ -1,14 +1,16 @@
-import {combineReducers, legacy_createStore as createStore} from "redux";
+import { combineReducers, legacy_createStore as createStore } from "redux";
 import dialogseReducer from "./DialogReducer";
 import profileReducer from "./ProfileReducer";
 import sidebarReducer from "./SideBarReducer";
+import usersReducer from "./UsersReducer";
 
 
 
 let reducers = combineReducers({
     profilePage: profileReducer,
     dialogPage: dialogseReducer,
-    sideBar: sidebarReducer
+    sideBar: sidebarReducer,
+    usersPage: usersReducer
 });
 
 
