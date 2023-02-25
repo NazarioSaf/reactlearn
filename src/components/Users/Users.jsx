@@ -3,7 +3,7 @@ import s from './Users.module.css';
 
 const Users = (props) => {
 
-  if (props.length === 0){
+  if (props.users.length === 0){
   props.setUsers([
     { id: 1, photo: 'https://resizer.mail.ru/p/7a1e86df-9686-5098-963e-27304c6f1133/AAACY37OntEVxnf9OOUuLkcQpyEwVtb3AZgK14eU9OI6IljiYtBizDmEp-vG8UfPC3h-OB130PE-ba1mk1rY6S-3Zek.jpg', followed: false, fullName: 'Dima', status: 'i lova life', location: { city: 'Minsk', country: 'Belarus' } },
     { id: 2, photo: 'https://resizer.mail.ru/p/7a1e86df-9686-5098-963e-27304c6f1133/AAACY37OntEVxnf9OOUuLkcQpyEwVtb3AZgK14eU9OI6IljiYtBizDmEp-vG8UfPC3h-OB130PE-ba1mk1rY6S-3Zek.jpg', followed: false, fullName: 'Nazar', status: 'Hello', location: { city: 'Moscow', country: 'Russia' } },
@@ -12,7 +12,7 @@ const Users = (props) => {
   ])
 }
 
-  return <div>
+  return <div> 
     {
       props.users.map(u => <div key={u.id}>
         <span>
